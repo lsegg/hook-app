@@ -7,5 +7,8 @@ export const useForm = (initialFormState = {}) => {
     const { name, value } = target;
     setFormState({ ...formState, [name]: value });
   };
-  return { ...formState, handleInputChange };
+  const handleReset = () => {
+    setFormState(initialFormState);
+  };
+  return { ...formState, handleInputChange, handleReset };
 };

@@ -2,11 +2,13 @@ import { useEffect } from "react";
 import { useForm } from "../hooks/useForm";
 
 export const SimpleFormWithCustomHook = () => {
-  const { username, email, password, handleInputChange } = useForm({
-    username: "janedoe",
-    email: "jane@doe.com",
-    password: "password",
-  });
+  const { username, email, password, handleInputChange, handleReset } = useForm(
+    {
+      username: "janedoe",
+      email: "jane@doe.com",
+      password: "password",
+    }
+  );
 
   useEffect(() => {
     console.log("Username changed");
@@ -27,7 +29,7 @@ export const SimpleFormWithCustomHook = () => {
 
       <input
         type="text"
-        className="form-control"
+        className="form-control mt-2"
         placeholder="janedoe"
         name="username"
         value={username}
@@ -36,7 +38,7 @@ export const SimpleFormWithCustomHook = () => {
 
       <input
         type="text"
-        className="form-control"
+        className="form-control mt-2"
         placeholder="jane@doe.com"
         name="email"
         value={email}
@@ -45,12 +47,16 @@ export const SimpleFormWithCustomHook = () => {
 
       <input
         type="password"
-        className="form-control"
+        className="form-control mt-2"
         placeholder="password"
         name="password"
         value={password}
         onChange={handleInputChange}
       />
+
+      <button className="btn btn-danger mt-2" onClick={handleReset}>
+        Reset
+      </button>
     </>
   );
 };
