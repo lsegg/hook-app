@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useState, useRef, useLayoutEffect } from "react";
 
 export const PokemonCard = ({
   id,
@@ -11,9 +11,17 @@ export const PokemonCard = ({
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isShiny, setIsShiny] = useState(false);
+  const [widthSize, setWidthSize] = useState({ width: "50%" });
+  const pokeRef = useRef();
+
+  useLayoutEffect(() => {
+    const { width } = pokeRef.current.getBoundingClientRect();
+    setWidthSize({ width });
+    return () => {};
+  }, [sprites]);
 
   return (
-    <div className="card text-capitalize" style={{ width: "40%" }}>
+    <div className="card text-capitalize" style={widthSize} ref={pokeRef}>
       <img
         src={
           isHovered
