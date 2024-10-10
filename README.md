@@ -1,6 +1,8 @@
 # Hook App
 
-Little exercise to study React Hooks:
+Little exercise to study React Hooks following the Udemy course [React: De cero a experto ( Hooks y MERN )](https://www.udemy.com/course/react-cero-experto) by [Fernando Herrera](https://github.com/Klerith).
+
+Subjects:
 
 - Write custom Hooks (useCounter, useFetch)
 - useState
@@ -10,3 +12,4 @@ Little exercise to study React Hooks:
 - Memo
 - useMemo
 - useCallback
+- useReducer
