@@ -4,7 +4,7 @@ Little exercise to study React Hooks following the Udemy course [React: De cero 
 
 Subjects:
 
-- Write custom Hooks (useCounter, useFetch)
+- Write custom Hooks (useCounter, useFetch, etc.)
 - useState
 - useEffect
 - useRef
@@ -13,3 +13,5 @@ Subjects:
 - useMemo
 - useCallback
 - useReducer
+- useContext
+- React Router
